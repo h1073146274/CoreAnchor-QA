@@ -6,15 +6,15 @@ from qa_pipeline import process_all_chunks
 
 def main():
     parser = argparse.ArgumentParser(description="Generate and evaluate QA pairs from chunks")
-    parser.add_argument("--input", required=True, help="Path to JSON file of chunks")
-    parser.add_argument("--output", default="qa_results.json", help="Output JSON file")
-    parser.add_argument("--similarity_analysis", default="similarity_analysis.json", help="Similarity analysis JSON file")
-    parser.add_argument("--chars_per_candidate", type=int, default=240, help="Chars per candidate")
-    parser.add_argument("--max_retry", type=int, default=3, help="Max rounds per candidate")
-    parser.add_argument("--threshold", type=float, default=0.75, help="Similarity threshold")
-    parser.add_argument("--min_score", type=float, default=6.0, help="Minimum score to accept")
-    parser.add_argument("--api_delay", type=float, default=2.0, help="API call delay in seconds")
-    parser.add_argument("--failmem_sim_th", type=float, default=0.90, help="Failure memory similarity threshold")
+    parser.add_argument("--input", required=True)
+    parser.add_argument("--output", default="qa_results.json")
+    parser.add_argument("--similarity_analysis", default="similarity_analysis.json")
+    parser.add_argument("--chars_per_candidate", type=int, default="")
+    parser.add_argument("--max_retry", type=int, default="", help)
+    parser.add_argument("--threshold", type=float, default="")
+    parser.add_argument("--min_score", type=float, default="")
+    parser.add_argument("--api_delay", type=float, default="")
+    parser.add_argument("--failmem_sim_th", type=float, default="")
     args = parser.parse_args()
 
     if not os.path.exists(args.input):
